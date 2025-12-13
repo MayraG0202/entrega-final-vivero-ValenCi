@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  min-height:100%;
+  overflow:hidden;
+}
+
+body{
+  font-family:"Special Elite",monospace;
+  background-image:url("../img/fondo.png");
+  background-size:cover;
+  background-position:right center;
+  background-repeat:no-repeat;
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+main, section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-fondo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.login-container{
+  width:360px;
+  max-width:92%;
+  padding:28px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(250, 244, 255, 0.92),rgba(250,244,236,.92));
+  border:1px solid rgba(210,198,183,.9);
+  background-image:url("../img/paper-fibers.png");
+  background-blend-mode:overlay;
+  backdrop-filter:blur(2px);
+  box-shadow:0 10px 30px rgba(0,0,0,.22), inset 0 2px 8px rgba(255,255,255,.6);
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.12));
+  transform:translateY(40px);
+  opacity:0;
+  animation:slideUp .7s ease-out forwards;
+  will-change:transform, opacity;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);            
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #3b364b;
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+label{
+  display:block;
+  color:#4b3f36;
+  font-size:14px;
+  margin-bottom:6px;
+  margin-left:2px;
+}
+
+.input-div {
+  position: relative;
+}
+
+input[type="email"],input[type="password"],input[type="text"]{
+  width:100%;
+  padding:11px 12px;
+  margin-bottom:6px;
+  border-radius:10px;
+  border:3px solid #cfc2b1;
+  background:rgba(255,255,255,.92);
+  font-family:"Special Elite";
+  font-size:15px #222;
+  outline:none;
+
+  appearance:none;
+  -webkit-appearance:none;
+
+  transition:border-color .18s, box-shadow .18s;
+}
+
+input:focus{
+  border-color:#c59e71;
+  box-shadow:0 0 10px rgba(197,158,113,.22);
+}
+
+.ojo-ocultar-password{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  font-size:15px;color:#6f6660;
+  user-select:none;
+}
+
+.error-msg{
+  color:#a13636;
+  font-size:13px;
+  margin-bottom:10px;
+  min-height:17px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  background:#3b3b3b;
+  color:white;
+  font-family:"Special Elite";
+  font-size:16px;
+  cursor:pointer;
+  transition:transform .16s, background .16s;
+}
+
+button:hover{
+  background-color: #c59e71;
+  filter:brightness(1.3);
+}
+
+.btn-exito{
+  background:#6abf6a !important;
+  transform:scale(1.03);
+  box-shadow:0 6px 18px rgba(106,191,106,.24);
+}
+
+#exito_msg{
+  margin-top:14px;
+  text-align:center;
+  color:#2f662f;
+  font-weight:700;
+  font-size:15px;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .28s, transform .28s;
+}
+
+#exito_msg.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+#login_error{
+  margin-top:14px;
+  text-align:center;
+  color:#9f0f0f;
+  font-weight:700;
+  font-size:15px;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .28s, transform .28s;
+}
+
+#login_error.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:600px){
+  body{background-position:80% center;}
+  .login-container{
+    width:92%;padding:20px;border-radius:14px;
+    animation:slideUp .7s ease-out forwards;
+  }
+}

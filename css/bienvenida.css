@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+header {
+    background-color: #ECEFE6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.logo-img {
+    width: clamp(64px, 10vw, 120px);
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;  
+}
+
+.links {
+    font-family: Arapey, 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: #830C1C;
+    font-weight: bold;
+    font-size: clamp(13px, 4vw, 20px);
+    transition: color 0.3s ease;
+}
+
+.links:hover{
+    color: #265429;
+}
+/* ÍCONO DE CARRITO EN EL HEADER */
+
+.cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart-img {
+    width: 32px;
+    height: auto;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #830C1C;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+@media (max-width: 560px) {
+    .cart-img {
+        width: 26px;
+    }
+
+    #cart-count {
+        font-size: 10px;
+        padding: 1px 5px;
+        top: -4px;
+        right: -4px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 18px;
+    }
+}
+
+/* FONDO */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: clamp(400px, 35vw, 600px);
+    object-fit: cover;
+    background-image: url(../img/banner-vivero.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner-titulo  {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    overflow: hidden;
+}
+
+.banner-titulo::before {
+    content: "";
+    position: absolute;
+    right: -120%;
+    top: 0;
+    width: 120%;
+    height: 120%;
+    background: rgba(0,0,0,0.6);
+    animation: fondoSlide 2s ease-out forwards;
+}
+
+.banner-titulo h1 {
+    font-family:'DM Serif Text', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    position: relative;
+    color: white;
+    font-size: clamp(32px, 10vw, 100px);
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(0,0,0,0.9);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 2s ease-out forwards;
+    z-index: 1;
+}
+
+/* PRODUCTOS */
+
+.productos {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0 10px;
+}
+
+.titulo-productos {
+    text-align: center;
+    color: #265429;
+    margin: 25px 0;
+    font-size: clamp(25px, 6vw, 35px); 
+}
+
+.prod-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(10px, 2vw, 25px);
+    margin-bottom: clamp(10px, 3vw, 25px);
+    padding: clamp(5px, 2vw, 15px);
+}
+
+.prod-items {
+    border: 2px solid #265429;
+    border-radius: 10px;
+    padding: clamp(5px, 1.5vw, 15px);
+    text-align: center;
+    flex: 1 1 clamp(200px, 35vw, 250px);
+    margin: 0 auto;
+}
+
+.img-card {
+    width: clamp(150px, 40vw, 250px);
+    height: clamp(220px, 60vw, 375px);
+    object-fit: contain;
+    display: block; 
+    margin: 0 auto;
+}
+
+.item-name{
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.info-prod{
+    margin: 10px 0;
+    font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.dto{
+    font-style: oblique;
+    text-decoration-line: line-through;
+    color: gray;
+    margin-right: 5px; 
+}
+
+.precio{ 
+    font-weight: bold;
+    font-size: clamp(16px, 3vw, 22px);
+    color: #265429;
+}
+
+.btn-container{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btn-añadir {
+    background-color: greenyellow;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: clamp(5px, 2vw, 8px) clamp(10px, 4vw, 16px);
+    font-size: clamp(12px, 2vw, 16px);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-añadir:hover{
+    font-weight: bold;
+    color: white;
+    background-color: #265429;
+}
+
+
+/* FONDO OSCURO - MENSAJE MODAL */
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.modal-bg.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* CAJA PARA MODAL */
+.modal {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial;
+    color: #265429;
+    border: 2px solid #265429;
+    animation: pop .3s ease;
+}
+
+.modal p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#cerrar-modal {
+    background: #265429;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#cerrar-modal:hover {
+    background: #2e6b34;
+}
+
+/* FORMULARIO DE CONTACTO */
+
+.form-contacto {
+    background-color: #830C1C;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.tit-form{
+    font-family: "Fleur De Leah", 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: clamp(40px, 8vw, 80px);
+    padding-top: 20px;
+    color: #ECEFE6;
+}
+
+.form-container {
+    font-family: Tahoma, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px 20px;
+}
+
+.formulario{
+    background-color: #ECEFE6 ;
+    color: #830C1C;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 400px;
+    padding: 20px;
+}
+
+input[type=text],[type=email],textarea {
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: solid 2px #830C1C;
+  font-size: 15px;
+  width: 100%;
+}
+
+input[type=text], input[type=email] {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+.mensaje {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-family: Tahoma, Verdana, sans-serif;
+}
+
+.btn-form {
+    font-family: Tahoma, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #830C1C;
+    padding: 6px;
+    border-radius: 5px;
+    width: 40%;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-form:hover{
+    background-color: #ECEFE6;
+    border: 2px solid #830C1C;
+    color: black;
+}
+
+.flor {
+    position: absolute;
+    bottom: clamp(10px, 2vw, 20px); 
+    right: clamp(10px, 2vw, 20px); 
+    width: clamp(60px, 20vw, 96px);
+    z-index: 3;
+    pointer-events: none; 
+}
+
+/* FOOTER */
+
+.footer{
+    font-family: Arapey, 'Courier New', Courier, monospace;
+    background-color: #ECEFE6;
+    color: #830C1C;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    gap: 16px 0;
+}
+
+.links-sec {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.links-sec li{
+    padding-bottom: 20px;
+}
+
+.footer-links{
+    flex: 1;
+    font-weight: bolder;
+}
+
+.footer-map {
+    flex: 1;
+}
+
+.footer-redes {
+    flex: 1;
+}
+
+.footer-redes a {
+    text-decoration: none; 
+    border: none;  
+}
+
+.footer-redes a:hover img {
+  opacity: 0.5;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.tit-redes {
+    padding-bottom: 10px;
+}
+
+.redes {
+    width: 32px;
+    height: 32px;
+}
+
+/* COPYRIGHT */
+.copyright {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: #830C1C;
+    color: white;
+    font-weight: bold;
+}
+
+/* Keyframes */
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fondoSlide {
+0% {
+    right: -120%;
+    opacity: 0;
+}
+100% {
+    right: 0;
+    opacity: 1;
+}
+}
+
+/* Media Queries */
+
+@media only screen and (320px <= width <= 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .links-sec li {
+    text-align: center;
+  }
+}

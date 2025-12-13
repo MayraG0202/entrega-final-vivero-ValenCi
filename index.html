@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>Iniciar Sesión</title>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <section>
+            <div class="img-fondo"></div>
+            <div class="login-container">
+                <h2>Iniciar Sesión</h2>
+                
+                <form id="login_form" novalidate>
+
+                    <label for="email">Correo</label>
+                    <div class="input-div">
+                        <input id="email" type="email" placeholder="tu@correo.com" required>
+                    </div>
+                    <div id="email_error" class="error-msg"></div>
+
+                    <label for="password">Contraseña</label>
+                    <div class="input-div">
+                        <input id="password" type="password" placeholder="********" required>
+                        <span class="ojo-ocultar-password" id="ocultar_pass">👁</span>
+                    </div>
+                    <div id="pass_error" class="error-msg"></div>
+
+                    <button id="login_btn" type="submit">Ingresar</button>
+                    <div id="login_error" class="error-msg">✕ Las credenciales no son válidas</div>
+                    <div id="exito_msg">✔ Inicio de sesión correcto</div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <script src="js/index.js"></script>
+</body>
+
+</html> 

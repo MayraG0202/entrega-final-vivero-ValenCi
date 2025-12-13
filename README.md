@@ -1,0 +1,13 @@
+# ENTREGA FINAL: PROYECTO "VIVERO VALENCI"
+### Descripción:
+
+Este proyecto es una página web dinámica del tipo "E-Commerce" para la venta de plantas de Vivero. La página está estructurada con HTML semántico y utiliza las etiquetas \<head> \<header>, \<body> \<main>, \<section> y \<footer> para organizar el contenido.
+
+La página web tiene tres vistas. 
+1- La página de inicio **(index.html)** es un formulario tipo login donde se utiliza JavaScript para validar los datos ingresados por el usuario y los requerimientos obligatorios (campos correo y contraseña completos, formato de correo, contraseña con más de 4 caracteres). El correo y contraseña correctos están establecidos por código. Cuando se ingresan datos que no coinciden con las credenciales aparece un mensaje de error y cuando los datos son los correspondientes, aparece un mensaje de éxito y redirecciona a la página de bienvenida.html.
+2- Página **bienvenida.html**, contiene un header con una imagen del logo, 3 links de navegación a las distintas secciones y un ícono de carrito de compras con un contador de artículos agregados que al apretarlo redirige a la página de carrito.html. En la sección de productos hay 8 cards flexbox con imagen, nombre, precio y botón para agregar al carrito. 
+Se incluye además un **Formulario de Contacto** a modo de ejemplo, utilizando el servicio **"FORMSPREE"** que nos permite confeccionar formularios funcionales sin necesidad de configurar un servidor. El footer está estructurado en tres columnas, donde aparecen links secundarios, un iframe de google maps, y los links a través de imagenes para acceder a las distintas redes sociales.
+3- Página **carrito.html**, contiene un header con un titulo h1 y debajo un link para volver a la página bienvenida.html. En esta sección se crean las cards de los productos agregados al carrito con la imagen del producto, nombre, un botón "➖" y un botón "➕" para modificar la cantidad requerida de un mismo producto y un botón "❌" para eliminar el producto de la lista de favoritos. Abajo de las cards aparece el total de la suma de los productos agregados, que se modifica dinámicamente con JavaScript y debajo un botón para "Vaciar el carrito" que borra todos los productos agregados.
+
+Contiene archivos .css dónde se le aplican los estilos a las vistas utilizando Flex y Media Queries para hacer el sitio "Responsive" y adaptar así las medidas de todo el contenido a los distintos tamaños de pantalla para su visualización en todos los disposivos.
+Se incluyen archivos multimedias (imagenes, iconos de redes sociales) y un iframe (Google Maps).
