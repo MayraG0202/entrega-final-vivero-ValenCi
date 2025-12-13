@@ -54,7 +54,7 @@ login_form.addEventListener("submit", e => {
     exito_msg.classList.remove("show");
 
     setTimeout(() => {
-      window.location.href = "../pages/bienvenida.html";
+      window.location.href = "pages/bienvenida.html";
     }, 500);
 
   }, 1600);
